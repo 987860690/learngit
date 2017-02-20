@@ -21,3 +21,8 @@ HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令git r
 
 
 git checkout -b dev
+
+
+
+用git log --graph命令可以看到分支合并图。
+用git log --graph命令可以看到分支合并图。用git log --graph命令可以看到分支合并图。用git log --graph命令可以看到分支合并图。
