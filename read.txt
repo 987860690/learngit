@@ -30,3 +30,18 @@ git checkout -b dev
 =======
 用git log --graph命令可以看到分支合并图。
 >>>>>>> feature1
+
+
+
+
+解决矛盾冲突
+
+   在a.txt 修改1添加并提交到分支dev上，
+   在a.txt 修改2添加并提交到master上，
+   合并dev和master产生矛盾冲突。
+   解决办法：
+   首先git status 查看当前状态
+   然后 cat a.txt   查看a.txt内容
+   其中Git用<<<<<<<，=======，>>>>>>>标记出不同分支的内容为冲突代码
+   cat a.txt 即 查看内容，修改成和主干上代码一样的
+    接着进行添加提交命令  合并成功
