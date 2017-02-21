@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>操作DOM以改变网页元素</title>
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+		<style type="text/css">
+			.help{
+				display: none;
+			}
+			#menu{
+				display: none;
+			}
+		</style>
+		<script>
+			$(function(){
+				//选取所有包含target属性的<a>，并且在其节点下添加一段文字
+			$("a[target]").append("(哈哈哈哈哈)")
+			//在提交表单时，判断username字段是否为空，如果为空则显示help区块内的内容
+			$("form").submit(function(){
+				if($("input#username").val()==""){
+					$("span.help").css({'display':'block'})
+				}
+			})
+			
+			//当用户点击id为open的连接时，显示id为menu的区块，并返回false,再次点击的时候隐藏
+//			$("#open").click(function(){
+//				$("#menu").toggle()
+//				return false
+//			})
+			
+		//将id为menu的区块以动态的效果显示出来
+		$("#open").click(function(){
+				$("#menu").slideToggle()
+				return false
+			})
+		
+		//将所有的<div id=“div1”>渐变为300px宽，文字与边界20px宽
+		$("div#div1").animate({
+			width:'200px',
+			height:'40px',
+			padding:'10px'
+		})
+//		
+		//具有动态效果的回调函数，将所有《div》以0.5s的时间隐藏之后，再议0.5s的时间动态效果显示,$(this)指的是方法调用方的元素
+		$("div").hide(500,function(){
+			$(this).show(500)
+		})
+		
+		//获取jq1.html 并且找出其中所有<div>下一层<h1>,将h1中的内容写入id为body的元素中
+		$("#body").load("jq1.html div>h2");
+			})
+			
+		//通过getJson()获得JSon格式的数据，并通过回调方法处理这些数据
+		$.getJSON("jq2.json",function(data){
+			for(var index in data){
+				$("#menu1").append("<li>"+data[index]+"</li>")
+			}
+		})
+		</script>
+	</head>
+	<body>
+		<div id="body">
+			<a href="http://baidu.com">qq</a>
+			<a href="https://987860690.github.io" target="_blank">ww</a>
+			<a href="jq1.html" target="_blank">ee</a>
+			
+			<form>
+				<label for="username">请输入你的名字</label>
+				<input type="text" name="username" id="username"/>
+				<span class="help">错误，请输入您的名字！</span>
+				<button type="submit" />submit</button>
+			</form>
+			
+			
+			<a id="open" href="#">控制面板</a>
+			<ul id="menu">
+				<li><a href="#">控制面板首页</a></li>
+				<li><a href="#">编辑个人资料</a></li>
+				<li><a href="#">个人空间管理</a></li>
+
+			</ul>
+		</div>
+		
+		<div id="div1" style="width: 100px;border: solid red 1px;">
+			最美不过故人
+		</div>
+		
+		<ul id="menu1">
+			<li>项目1</li>
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>实现页面动态性</title>
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+		<style type="text/css">
+			div{
+				margin: 3px;
+				width: 40px;
+				height: 40px;
+				position: absolute;
+				left: 0px;
+				top: 30px;
+				background-color: greenyellow;
+				display: none;
+			}
+			div.newcolor{
+				background-color: blueviolet;
+			}
+			span{
+				color: red;
+			}
+		</style>
+		<script>
+			$(function(){
+				$("#show").click(function(){
+					var n =$("div").queue("fx");
+					$("span").text("Queue length is:"+n.length)
+				})
+				function runIt(){
+					$("div").show("slow")
+					.animate({left:'+=200'},3000)
+					.slideToggle(1000)
+					.slideToggle("fast")
+					.hide("slow")
+					.show(1200)
+					.slideUp("normal",runIt)
+				}
+				runIt()
+			})
+		</script>
+	</head>
+	<body>
+		<button id="show">Show Length of Queue</button>
+		<span></span>
+		<div></div>
+		
+	
+	</body>
+</html>

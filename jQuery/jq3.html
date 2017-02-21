@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>手动编写jQuery的HELLO world</title>
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+		<style type="text/css"></style>
+		<script>
+			$(function(){
+				//改变多个元素的行为
+				$("a").click(function(){
+					alert("Thanks for visiting!")
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<a href="http://jquery.com">jQuery</a>
+		<a href="http://www.google.com">Google</a>
+		<a href="http://www.yahoo.com">Yahoo</a>
+	</body>
+</html>

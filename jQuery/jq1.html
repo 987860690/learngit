@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>$选取符</title>
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+		<style type="text/css">
+			.specail{
+				color: red;
+			}
+		</style>
+		<script>
+			$(function(){
+				$("div").addClass("specail");
+				$("#body").css({'fontSize':'32px'})
+				$("div#body").css({'color':'blue'})
+				$("div.contents p").hide()
+				$("div>div").find("p").show()
+				$("div:has(div)").css({'border':'1px solid red'})
+			})
+		</script>
+	</head>
+	<body>
+		<div id="body">
+			<h2>Some Head</h2>
+			<div class="contents">
+				<p>aaa</p>
+				<p>bbb</p>
+			</div>
+		</div>
+	</body>
+</html>
