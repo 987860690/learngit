@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>动态改变字体大小</title>
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+		<style type="text/css">
+		.div2{
+			margin-left: 200px;
+		}
+			p{
+				width: 400px;
+				height: 20px;
+				font-size: 20px;
+				padding: 10px;
+				border: 1px solid blue;
+				background-color: deepskyblue;
+			}
+		</style>
+		<script>
+			$(function(){
+				
+				var originFont = $("p").css("font-size");
+				$(".reset").click(function(){
+					$("p").css("font-size",originFont);
+				})
+				
+				$(".increase").click(function(){
+					var nowFont = $("p").css("font-size");
+					var nowFontNum = parseFloat(nowFont,10);
+					var newFont = nowFontNum * 1.2;
+					$("p").css('font-size',newFont);
+					return false;
+				})
+				
+				$(".decrease").click(function(){
+					var nowFont = $("p").css("font-size");
+					var nowFontNum = parseFloat(nowFont,10);
+					var newFont = nowFontNum * 0.8;
+					$("p").css('font-size',newFont);
+					return false;
+				})
+				
+			})
+		</script>
+	</head>
+	<body>
+		<div class="div2">
+			<button type="button" class="increase">Increase</button>
+			<button type="button" class="decrease">Decrease</button>
+			<button type="button" class="reset">Reset</button>
+		</div>
+		<!--<img id="spacer" class="a b c" src="img/QQ.png" alt="blank" href="attr().html"/>-->
+		<p >如梦江湖如戏人生是我沉沦</p>
+		<p>枝头薄雪上存</p>
+		<p>桃花菲雨古城</p>
+		
+	</body>
+</html>

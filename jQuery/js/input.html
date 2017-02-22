@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>输入框的提示</title>
+		<!--<script type="text/javascript" src="jquery.min.js" ></script>-->
+		<script>
+//			$(function(){
+//				
+//			})
+			jQuery.fn.hint = function(){
+				return this.each(function(){
+					//用于保证所有匹配的元素都被此jQuery插件所用
+					//创建一个缓存的jQuery对象副本
+					var t= jQuery(this)
+					var title = t.attr("title")
+					if(title){
+						//定义了元素失去输入焦点时的行为，包括判断输入内容是否为空，如果为空，那么将title的属性设置为提示字符
+						t.blur(function(){
+							if(t.val()==''){
+								t.val(title)
+								t.addClass('blur') //在加入字符时，还定义了提示字符的样式
+							}
+						})
+						t.focus(function(){
+							if(t.val()==title){
+								t.val('')
+								t.removeClass('blur')//再有输入的时候，去除此样式
+							}
+						})
+						t.parent('form:first()').submit(function(){
+							if(t.val()==title){
+								t.val('')
+								t.removeClass('blur')
+							}
+						})
+						t.blur()//这样在初始状态下，输入框默认失去焦点并显示提示字符
+					}
+				})
+			}
+		</script>
+	</head>
+	<body>
+		<form action="" method="post">
+			<div><label for="search">Search:</label>
+				<input type="text" name="search" value="" id="search" title="请输入你的名字"/>
+				<input type="submit" value="GO" />
+			</div>
+		</form>
+	</body>
+</html>

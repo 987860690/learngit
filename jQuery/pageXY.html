@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>捕捉鼠标位置</title>
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+		<style type="text/css">
+			.div3{
+				width: 100px;
+				height: 100px;
+				background-color: skyblue;
+				border-radius: 50%;
+			}
+		</style>
+		<script>
+			$(function(){
+				$(this).mousemove(function(e){
+					$("#mouse").html(e.pageX+','+e.pageY)
+				})
+			})
+		</script>
+	</head>
+	<body>
+		
+		<!--<div class="div3"></div>-->
+		<span id="mouse">0,0</span>
+	</body>
+</html>
