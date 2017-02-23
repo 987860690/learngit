@@ -1,0 +1,22 @@
+#nav{
+	width: 100px;
+	padding: 10px;
+	list-style: none;
+}
+#nav li{
+	background-color: skyblue;
+	margin: 5px;
+	height: 20px;
+}
+.menu{
+	padding: 0;
+	margin-top: -18px;
+	margin-left: 88px;
+	width: 202px;
+	list-style: none;
+	display: none;
+}
+.menu li{
+	height: 20px;
+	width: 200px;
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>页面弹出菜单</title>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<!--<link rel="stylesheet" href="css/Pagepopupmenu.css" />-->
+		<style type="text/css">
+			#nav {
+				width: 100px;
+				padding: 10px;
+				list-style: none;
+			}
+			
+			#nav li {
+				background-color: skyblue;
+				margin: 5px;
+				height: 20px;
+			}
+			
+			.menu {
+				padding: 0;
+				margin-top: -18px;
+				margin-left: 88px;
+				width: 202px;
+				list-style: none;
+				display: none;
+			}
+			
+			.menu li {
+				height: 20px;
+				width: 200px;
+			}
+		</style>
+		<!--<script type="text/javascript" src="js/Pagepopupmenu.js"></script>-->
+		<script>
+			//鼠标移动上去 二级菜单显示，鼠标移出二级菜单隐藏
+
+			//$(function(){
+			//	$("#nav li").hover(function(){
+			//	$(this).find("ul").fadeIn("fast")
+			//	$(this).siblings().find("ul").fadeOut("fast")         
+			//},function(){
+			//	$(this).find("ul").fadeOut("slow")
+			//})
+			//})
+
+			//改善方法
+
+			var obj = null;
+
+			function checkHover() {
+				if(obj) {
+					obj.find('ul').fadeOut('fast');
+				}
+			}
+
+			$(function() {
+				$('#nav>li').hover(function() {
+					if(obj) { //如果obj对象存在（即元素是可见的），就将其隐藏
+
+						obj.find('ul').fadeOut('fast');
+						obj = null;
+					}
+					$(this).find('ul').fadeIn('fast')
+				}, function() {
+					obj = $(this);
+					setTimeout('checkHover()', 400)
+				})
+			})
+		</script>
+	</head>
+
+	<body>
+		<ul id="nav">
+			<li>Test
+				<ul class="menu">
+					<li> sub menu</li>
+					<li> sub menu</li>
+					<li> sub menu</li>
+
+				</ul>
+			</li>
+			<li>Test
+				<ul class="menu">
+					<li> sub menu</li>
+					<li> sub menu</li>
+					<li> sub menu</li>
+
+				</ul>
+			</li>
+			<li>Test
+				<ul class="menu">
+					<li> sub menu</li>
+					<li> sub menu</li>
+					<li> sub menu</li>
+
+				</ul>
+			</li>
+		</ul>
+	</body>
+
+</html>
