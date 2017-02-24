@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		   <title>获取下一天的日期</title>
+</head>
+<body>
+    <input type="date" value="" id="date"/>
+    <div id="div1"></div>
+    <button type="button" id="btn" onclick="huoQu()">hguoQu</button>
+    <script type="text/javascript">
+        function huoQu() {
+            var oDate = new Date(document.getElementById('date').value)
+            oDate = +oDate + 1000 * 60 * 60 * 24
+            oDate = new Date(oDate)
+            var odiv = document.getElementById('div1');
+            odiv.innerText = oDate
+        }
+      
+    </script>
+</body>
+</html>
