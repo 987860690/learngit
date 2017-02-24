@@ -1,0 +1,57 @@
+html,body,div,span,applet,object,h1,h2,h3,h4,h5,h6,a,ol,ul,li,form{
+	border: none;
+	/*font-family: "微软雅黑";*/
+	font-size: 100%;
+	font-weight: 800;
+	margin: 0;
+	padding: 0;
+}
+body{
+	background: #fff none repeat scroll 0%;
+	line-height: 24px;
+	font-size: 18px;
+	font-family: arial,sans-serif;
+	height: 100%;
+}
+
+table{
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption,th,td{
+	font-weight: normal;
+	text-align: left;
+	
+}
+blockquote:before,blockquote:after,q:before,q:after{
+	content: "";
+}
+blockquote,q{
+	quotes: "" "";
+}
+a{
+	cursor: pointer;
+	text-decoration: none;
+}
+br.both{
+	clear: both;
+}
+
+
+#backgroundPopup{
+	display: none;
+	position: fixed;
+	_position:absolute;  /*hack for IE6*/
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background: #000000;
+	border: 1px solid #cecece;
+	z-index: 1;
+}
+
+
+
+
+
