@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="angularjs1.5.8/angular.min.js"></script>
+		<script>
+			//			var app = angular.module("myApp", []);
+			//			app.controller("MyController", function($scope, $parse) {
+			//						['$scope', '$parse', function($scope, $parse) {
+			//
+			//							$scope.person = {
+			//								name: "Ari Lerner"
+			//							};
+			//							$scope.$watch('expr', function(newVal, oldVal, scope) {
+			//								if(newVal != oldVal) {
+			//									//用该表达式设置parseFun
+			//									var parseFun = $parse(newVal);
+			//									//获取经过解析后的表达式
+			//									$scope.parsedValue = parseFun(scope)
+			//								}
+			//							})
+			//						})
+			angular.module('myApp', [])
+				.controller('MyController', ['$scope', '$parse', function($scope, $parse) {
+
+					$scope.person = {
+						name: "Ari Lerner"
+					};
+
+					$scope.$watch('expr', function(newVal, oldVal, scope) {
+						if(newVal !== oldVal) {
+							// Let's set up our parseFun with the expression
+							var parseFun = $parse(newVal);
+							// Get the value of the parsed expression, set it on the scope for output
+							scope.parsedExpr = parseFun(scope);
+						}
+					});
+				}]);
+		</script>
+	</head>
+
+	<body>
+		<div ng-controller="MyController">
+			<input ng-model="expr" type="text" placeholder="Enter an expression" />
+
+		</div>
+		<h2>{{parseValue}}</h2>
+	</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html >
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="angularjs1.5.8/angular.min.js">
+		</script>
+	</head>
+
+	<body ng-app="usersApp">
+		<div ng-controller="MyController">
+			<h1>hello {{name}}!</h1>
+		</div>
+		<script>
+		var app=angular.module('usersApp',[])
+		app.controller('MyController',function($scope){
+			$scope.name="Lrn"
+		})
+			
+		</script>
+	</body>
+
+</html>

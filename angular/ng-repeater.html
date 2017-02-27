@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="angularjs1.5.8/angular.min.js"></script>
+		<script>
+			var app = angular.module("myApp",[]);
+			app.controller("WorldCtrl",function($scope){
+				$scope.populations = 7000;
+				$scope.countries =[{name:'France',population:63.1},{name:'UK',population:64.3}] 
+				$scope.worldsPercentage=function(coutryPopulation){
+					return (coutryPopulation/$scope.populations);
+				}
+			})
+		</script>
+	</head>
+	<body>
+		<ul ng-controller="WorldCtrl">
+			<li ng-repeat="country in countries">
+				{{country.name}} has population of {{country.population}},
+				<br>
+				{{worldsPercentage(country.population)}}% of the world's population.
+			</li>
+			<hr>
+			World's population:{{population}} millions.
+		</ul>
+	</body>
+</html>

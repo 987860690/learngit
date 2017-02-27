@@ -1,0 +1,108 @@
+controller                                                           
+1、桥梁                                                                 
+2、业务逻辑                                                               
+                                                                     
+                                                                     
+ng-app                                                               
+                                                                     
+定义模块                                                                 
+ var mod=angular。module（' module_name',[]）;//[]定义该模块依赖的另一个模块         
+                                                                     
+ 引用模块                                                                
+ ng-app=“module_name”                                                
+                                                                     
+ 模块上加东西                                                              
+ module_name.controller('controller_name',function($scope，$http){    
+    //controller代码                                                   
+    //$scope ——所有的angular的数据都在$scope上                                
+    //获取后台数据                                                         
+    $http.get('name.txt ') .success(function(arr){                   
+    $scope.users=arr                                                 
+    }).error(function(){                                             
+    alert('错误')                                                      
+    })                                                               
+ })                                                                  
+ //读取后台数据                                                            
+ ng-repeat=“user in users”  例如：                                      
+ <li ng-repeat=“user in users” >名字：{{user.name}},年龄:{{user.age}}</li>
+                                                                     
+                                                                     
+ 引用控制器                                                               
+ ng-controller=“controller_name”                                     
+                                                                     
+                                                                     
+ angular与原生js不互通                                                     
+ 如：                                                                  
+原生 parseInt（a）  alert(str)                                           
+angular ： $scope.parseInt=function(n){                               
+    return parseInt(n)                                               
+}                                                                    
+        $scope.alert=function(str){                                  
+        window.alert(str)                                            
+        }                                                            
+                                                                     
+                                                                     
+                                                                     
+双向绑定：                                                                
+        双向：可进可处                                                      
+        例如：输入框——即可以输入也可以输出                                           
+        <input type="text"  ng-module="a">                           
+         <input type="text"  ng-module="a">                          
+  所有的数据都是双向指的是的                                                      
+            数据<->UI       
+            
+            
+            
+            脏检查：
+                        $scope上面谁变了  谁没变
+                                                                     
+依赖注入：                                                                
+        函数：函数的参数是由调用方决定的      
+        好处： 挑选参数 顺序随便                                       
+                                                                     
+    
+    
+    
+    
+    
+    
+  
+    
+    es6
+    块级作用域：
+    let ---块级作用域
+    const ---常量    //保证外部不能重新赋值  如：const a =12； a = 5；错误
+                            //不保护里面的内容被修改  如：const a  = {n1:10,n2:111}; a.n1+=7;   alert(a) 此时a={n1:17,n2:111}
+    map /reduce -------   google提出  用于  用于云计算
+                                
+                                                                                    任务1 --------结果1                                 
+                                任务  ---》map（规约/打散）        任务2 --------结果2                          reduce(汇总)------结果整合
+                                                                                    任务3 --------结果3   
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+        generator    ：分步执行
+        yield：
+        Promise：   优化回调函数
+    代码块当中起作用的变量                                                             
+    <script>
+    {
+            //var a=12; 此时的a仍旧可以被代码块外部所调用  因为var定义的是函数级
+            
+            //只能在代码块中起作用：
+            let a=12
+    }
+    </script>
+    
+    
+    解构赋值：=左右两边结构名字相同  里面根据名字对应赋值
+     var json={a:12,b:5}
+     原生取值： var a=json.a 
+    es6 
+    var {a,b} = {a:12,b:5}
+    
+    
+    
+    
+    
