@@ -1,0 +1,56 @@
+!<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		   <title>获取下一天的日期</title>
+		   <script type="text/javascript">
+		   	function calculator(op){
+		   		var num1,num2,num3;
+		   		num1=parseFloat(document.form.txtYW.value);
+		   		num2=parseFloat(document.form.txtSX.value);
+		   		num3=parseFloat(document.form.txtEN.value);
+		   		if(num1>=0&&num2>=0&&num3>=0){
+		   			if(op=="+"){
+		   				document.form.total.value=num1+num2+num3;
+		   			}
+		   			if(op=="/"){
+		   				document.form.avg.value=(num1+num2+num3)/3;
+		   			}
+		   		}else{
+		   			alert("数据错误!")
+		   		}
+		   	}
+		   </script>
+</head>
+<body>
+   <form name="form">
+   	<table width="240" height="132" bgcolor="#CECECE" border="1" align="center">
+   		<tr align="center">
+   			<th width="95">科目</th>
+   			<th>成绩</th>
+   		</tr>
+   		<tr align="center">
+   			<td>语文</td>
+   			<td><input type="text" name="txtYW" /></td>
+   		</tr>
+   		<tr align="center">
+   			<td>数学</td>
+   			<td><input type="text" name="txtSX"  /></td>
+   		</tr>
+   		<tr align="center">
+   			<td>英语</td>
+   			<td><input type="text" name="txtEN" /></td>
+   		</tr>
+   		<tr align="center">
+   			<td><input type="button" name="btn1" onclick="calculator('+')" value="总成绩"/></td>
+   			<td><input type="text" name="total"  /></td>
+   		</tr>
+   		<tr align="center">
+   			<td><input type="button" name="btn2" onclick="calculator('/')" value="平均成绩"/></td>
+   			<td><input type="text" name="avg" /></td>
+   		</tr>
+   	
+   	</table>
+   </form>
+</body>
+</html>
