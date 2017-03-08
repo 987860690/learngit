@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>比较运算符</title>
+		
+	</head>
+	<body>
+		<form>
+			数字1:<input type="text" name="num1" />
+			数字2:<input type="text" name="num2" />
+			<input type="submit" value="提交" onClick="rec(this.form)" />
+		</form>
+		
+	</body>
+	<script type="text/javascript">
+			function rec(form){
+				var no_1,no_2;
+				no_1=parseFloat(form.num1.value);
+				no_2=parseFloat(form.num2.value);
+				if(no_1>no_2){
+					alert("数字1比数字2大");
+				}else if(no_1==no_2){
+					alert("数字1与数字2相等");
+				}else{
+					alert("数字2比数字1大");
+				}
+			}
+		</script>
+</html>
