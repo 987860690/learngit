@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>switch语句</title>
+	</head>
+	<body>
+		<form>
+			<input type="text" name="num" />
+			<input type="submit" value="提交" onclick="rec(this.form)" />
+		</form>
+	</body>
+	
+	<script type="text/javascript">
+		function rec(form){
+			var a = form.num.value;
+			var b=Math.floor(a/10);
+			switch(b){
+				case 9:document.write("优秀");break;
+				case 8:document.write("良好");break;
+				case 7:document.write("中等");break;
+				case 6:document.write("及格");break;
+				default:document.write("不及格");break;
+			}
+		}
+	</script>
+</html>
