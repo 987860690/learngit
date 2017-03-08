@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>IF的使用</title>
+	</head>
+	<body>
+		<form>
+			<input type="text" name="num" />
+			<input type="submit" value="提交" onclick="rec(this.form)" />
+		</form>
+	</body>
+	<script type="text/javascript">
+		function rec(form){
+			var a = form.num.value;
+			if(a%2==0){
+				alert("该数是偶数");
+			}else{
+				alert("该数是单数")
+			}
+		}
+	</script>
+</html>
