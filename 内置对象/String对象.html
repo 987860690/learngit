@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>String对象中常用的13种方法</title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+//		<!--charCodeAt方法返回一个整数，代表指定位置字符串的unicode编码-->
+//		<!--用法：strObj.charCodeAt(index)-->
+//		<!--说明:index指索引,如果指定位置没有字符，将返回NaN-->
+			var str = "ABC";
+			alert(str.charCodeAt(0))
+//结果是65
+			
+			//fromcharCode方法从一些Unicode字符串中返回一个字符串
+			//用法: String.fromCharCode([code1,[code2..]])
+			//说明：code1,code2...是要转换为字符串的Unicode字符串序列，如果没有参数，结果为空字符串
+//			SfromCharCode(65,66,112)
+			alert(String.fromCharCode(65,66,112))
+		</script>
+	</body>
+</html>

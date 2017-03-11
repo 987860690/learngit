@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>onchange 事件会在域的内容改变时发生</title>
+	</head>
+	<body>
+		输入你的名字：<input type="text/javascript" onchange="upperCase(this.id)" id="fname"/>
+	</body>
+	
+	<script type="text/javascript">
+		function upperCase(x){
+			var y =document.getElementById(x).value;
+			document.getElementById(x).value=y.toUpperCase()
+		}
+	</script>
+</html>

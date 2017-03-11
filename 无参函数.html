@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>无参函数</title>
+	</head>
+	<body>
+		<form name="form">
+			数字1:<input type="text" name="num1" />
+			数字2:<input type="text" name="num2" />
+			<input type="button" value="求和" onclick="rec()"/>
+		</form>
+	</body>
+	<script type="text/javascript">
+		function rec(){
+			var n1,n2;
+			n1=parseFloat(document.form.num1.value);
+			n2=parseFloat(document.form.num2.value);
+			n3=n1+n2;
+		    alert(n3)
+		}
+	</script>
+</html>

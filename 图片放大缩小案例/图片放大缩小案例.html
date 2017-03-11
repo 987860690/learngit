@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>图片放大缩小案例</title>
+		<script type="text/javascript">
+	
+			
+			function updateLarge(){
+				//获取图片的元素
+			var imgmsg=document.getElementById("myimg");
+				imgmsg.width="360";
+				imgmsg.height="640"
+			}
+			function updateSmall(){
+				//获取图片的元素
+			var imgmsg=document.getElementById("myimg");
+				imgmsg.width="50";
+				imgmsg.height="120"
+			}
+		
+			
+		</script>
+	</head>
+	<body>
+		<p>
+			<input type="button" name="btn" value="放大" onclick="updateLarge()"/>
+			<input type="button" name="btn" value="缩小" onclick="updateSmall()"/>
+		</p>
+		<img src="img/3.jpg" id="myimg" height="240" width="100" />
+	</body>
+</html>

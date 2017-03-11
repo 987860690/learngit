@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>onfocus 事件在对象获得焦点时发生</title>
+		<script type="text/javascript">
+			
+
+			function setStyle(x) {
+				document.getElementById(x).style.background = "yellow"
+			}
+			
+			//失去焦點
+			function mya(s) {
+				s.style.background = "red";
+			}
+		</script>
+	</head>
+
+	<body>
+		First name: <input type="text" onfocus="setStyle(this.id)" id="fname">
+		<br /> Last name: <input type="text" onfocus="setStyle(this.id)" id="lname">
+		<br />输入框:
+		<input type="text" onfocus="setStyle(this.id)" onblur="mya(this)" id="a" />
+	</body>
+
+</html>
