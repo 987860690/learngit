@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script type="text/javascript">
+		window.onload=function(){
+			var ball = document.getElementById("ball");
+		alert(ball)
+		function init(){
+//			ball.src = 'img/ball.jpg';
+			setInterval(draw,50);
+		}
+		function draw(){
+			var ctx = document.getElementById('myCanvas').getContext("2d");
+			ctx.globalCompositeOperation="destination-over";
+			ctx.clearRect(0,0,300,300);
+			ctx.strokeStyle='blue';
+			ctx.save();
+			ctx.translate(150,150);
+			//动态设置旋转角度
+			var time = new Date();
+			ctx.rotate(((2*Math.PI)/60)*time.getSeconds()+((2*Math.PI)/60000)*time.getMilliseconds());
+			ctx.translate(105,0);
+			ctx.drawImage(ball,-3,-3);//绘制球体
+			//绘制轨道
+			ctx.restore();
+			ctx.beginPath();
+			ctx.arc(150,150,105,0,Math.PI*2,false);
+			ctx.stroke();
+		}
+		init();
+		}
+	</script>
+	<body>
+		<img src="img/ball.jpg" id="ball" width="20px" height="20px"/>
+		<canvas id="myCanvas" width="300px" height="300px" style="border: 1px solid red;"></canvas>
+	</body>
+	
+</html>

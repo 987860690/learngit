@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>绘制矩形</title>
+	</head>
+	<body>
+		<canvas id="myCavas" width="200px" height="100px"></canvas>
+		<button id="btn_1" onclick="fillReact();return true;">显示</button>
+		<button id="btn_1" onclick="clearReact();return true;">清除</button>
+		
+	</body>
+	<script type="text/javascript">
+		var cxt = document.getElementById("myCavas");
+			//创建context对象
+			var context = cxt.getContext("2d");
+		function fillReact(){
+		
+			//绘制矩形边框的颜色
+			context.strokeStyle="red";
+			//填充背景色
+			context.fillStyle="deepskyblue";
+			//规定形状 位置 大小
+			context.fillRect(0,0,200,100);
+			//绘制矩形边框
+			context.strokeRect(0,0,200,100)
+		}
+		
+		function clearReact(){
+			context.clearRect(0,0,120,70)
+		}
+	</script>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--弧形线条-->
+		<canvas id="mycanvas" width=400 height=300 style="border: 1px solid red;"></canvas>
+	
+		<button onclick="Canvas() " >Canvas</button>
+	</body>
+	<script type="text/javascript">
+		
+	  function Canvas(){
+	  	var c = document.getElementById("mycanvas");
+		 var cxt = c.getContext("2d");
+			cxt.beginPath();
+			cxt.arc(100,100,50, 0, Math.PI * 2, false);
+//			cxt.closePath();
+			cxt.stroke();
+		}
+	</script>
+</html>
